@@ -36,11 +36,9 @@ function pad(str, length) {
 }
 
 function main() {
-  const baseDir = process.argv[2];
-  if (!baseDir) {
-    console.error('Usage: lsrepos <directory>');
-    process.exit(1);
-  }
+  let baseDir = process.argv[2];
+  if (!baseDir)
+    baseDir=".";
 
   const entries = fs.readdirSync(baseDir, { withFileTypes: true });
   const results = [];
